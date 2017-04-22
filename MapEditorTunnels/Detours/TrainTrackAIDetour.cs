@@ -1,5 +1,4 @@
-﻿using System;
-using ColossalFramework;
+﻿using ColossalFramework;
 using MapEditorTunnels.Redirection;
 
 namespace MapEditorTunnels.Detours
@@ -35,9 +34,9 @@ namespace MapEditorTunnels.Detours
             if ((double)maxElevation > (double)byte.MaxValue)
                 errors = errors | ToolBase.ToolErrors.HeightTooHigh;
             //begin mod
-            if (this.m_tunnelInfo != null && (double)maxElevation < -Mod.UNDERGROUND_OFFSET)
+            if (this.m_tunnelInfo != null && (double)maxElevation < -8.0)
                 return this.m_tunnelInfo;
-            if (this.m_slopeInfo != null && (double)minElevation < -Mod.UNDERGROUND_OFFSET)
+            if (this.m_slopeInfo != null && (double)minElevation < -8.0)
                 return this.m_slopeInfo;
             //end mod
             if (this.m_bridgeInfo != null && (double)maxElevation > 25.0 && ((double)length > 45.0 && !curved) && (enableDouble || !this.m_bridgeInfo.m_netAI.RequireDoubleSegments()))

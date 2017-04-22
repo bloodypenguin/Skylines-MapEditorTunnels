@@ -31,7 +31,6 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Detours\BuildingDecorationDetour.cs" />
     <Compile Include="Detours\PedestrianPathAIDetour.cs" />
     <Compile Include="Detours\RoadAIDetour.cs" />
     <Compile Include="Detours\TrainTrackAIDetour.cs" />

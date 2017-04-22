@@ -2,18 +2,20 @@
 using System.Reflection;
 using ICities;
 using MapEditorTunnels.Redirection;
-using UnityEngine;
 
 namespace MapEditorTunnels
 {
     public class LoadingExtension : LoadingExtensionBase
     {
-
         private static Dictionary<MethodInfo, RedirectCallsState> redirects;
 
         public override void OnCreated(ILoading loading)
         {
             base.OnCreated(loading);
+            if (loading.currentMode != AppMode.MapEditor)
+            {
+                return;
+            }
             Redirect();
         }
 
